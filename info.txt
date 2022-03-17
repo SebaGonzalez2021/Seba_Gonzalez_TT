@@ -1,0 +1,181 @@
+CLASE 2: Instalacion y Configuración:
+
+NODE.JS: Entorno de desarrollo de JS
+
+NPM: Node Package Manager
+
+Webpack: Es un Bundler (empaquetador)
+https://webpack.js.org/
+Babel: Es un Transpiler (traductor)
+JSX : JS + XML;
+
+API: Application Programing Interface (Interfaz de programacion de aplicaciones)
+API WEB: API para el desarrollo de aplicaciones WEB
+API REST: Representacion de datos en formato JSON
+
+create-react-app: Crea una aplicacion basica de React
+
+COMANDO DE INSTALACION NPM:
+
+npm i|install [tipo] <paquete> 
+    (npm i o npm install) 
+    (El corchete significa opcional [tipo]) 
+    (<> no se escribe, sino que se reemplaza por lo que queres intalar)
+
+1. abrimos el CMD;
+2. Nos ubicamos en la carpeta en donde queremos instalar en el CMD;
+3. Escribimos en CMD: npm i -g create-react-app [ENETER]
+4. Escribimos en la Carpeta en donde queremos instalar react-app: create-react-app app(nombre de la carpeta)
+5. Crear una Carpeta desde CMD create-react-app my-app (my-app puede ser otro nombre tmb)
+ 
+
+-------------------------------------
+CLASE 03: JSX & transpiling:
+
+PLANTILLA MINIMA PARA QUE LA APLICACION ARRANQUE:
+
+1) Tener la variable React (libreria) en el scope (en el html)
+
+-> import React from 'react';
+
+2) Tener la variable ReactDom (libreria) en el scope (en el html)
+
+-> import ReactDOM from 'react-dom';
+
+3) Tener un componente de react 
+
+->:
+function App () {
+    return "Hola Mundo"
+}
+
+4) Renderizar App en el dom: se dibuja lo que creamos en el lugar en donde seleccionamos:
+
+ReactDOM.dibujar (a,b) a=> El componente que creamos, b=> Donde lo queremos colocar en el html
+
+-> ReactDOM.render(App(),document.getElementById('root'));
+
+>COMPONENTES:<
+**1. Todos los componentes en React son FUNCIONES, pero se usa una sintaxis distinta para ejecutar las funciones: JSX + XML
+
+Ejemplos de funciones que vamos a utilizas:
+
+-> function Componente() {};
+-> const Componente = () => {};
+
+PEEERO En vez de que sea algo asi: Componente(), va a ser asi:
+-> Componente () = <Componente />
+-> Componente () = <Componente><Componente/>
+
+Lo mejor es realizar un archivo por cada seccion que tenga una pagina, por eso creamos un nuevo archivo js en el SRC de React.
+En el nuevo archivo JS (App.js), exportar la funcion que creamos con "export default App";
+Volver al index.js y ahora hay que importarlo;
+
+**2)Todos los Componentes en React arrancan con mayuscula;
+**3)Todos los Componentes retornan un elemento;
+
+PARA MANTENER ACTUALIZADO EL CODIGO EN GITHUB:
+
+1. Ir a "Control de Codigo Fuentes" (en la sección en donde estan las extenciones tambien);
+2. Ir a los "..." -> "remoto" -> "Agregar remoto" 
+3. Pegar la direccion del repositorio git + ctrl Enter;
+4. Creamos un alias (Coder-React);
+5. Despues solamente ir a la barra de Mensaje y crear un mensaje y darle enter confirmando los cambios
+
+-----------------------------
+CLASE 05: COMPONENTES II:
+
+ESTADO. 
+Concepto: Son variables que viven dentro de un componente que cuando se modifican React lo vuelve a renderizar. 
+
+CICLO DE VIDA DE LOS COMPONENTES:
+Nacen - viven - mueren
+Mont: Nace cuando se ejecuta por primera vez y lo estas viendo en pantalla (se renderiza o se monta)
+Update: En algun momento de su vida se modifica
+Unmount: Desmontaje del componente (puede no pasar que desaparezca) 
+
+VIERTUAL-DOM:
+
+-HOOK: Gancho - Son funciones que adaptan un componente funcional a que tenga funcionalidades que antes no tenia.
+
+Aglunas clases son:
+* useState: siempre es un array con dos elementos, la primera es el valor actual de tu estado y la segunda es la funcion que tendrias que ejecutar si lo quisieras cambiar
+* useEffect: Se utiliza para realizar efectos en segundo plano mientras que el principal se esta ejecutando;
+
+Todos los hooks hay que importarlo de react: 
+
+import {useState, useEffect, etc} from "react"
+
+A tener en cuenta:
+-Todos los hooks comienzan con "use"
+-Todos los hooks son funciones, por lo tanto se utiliza algo asi: useState()
+-Solo se importa el hook en el componente que se va a utilizar
+-Ningun hook puede estar en una condicional o un bucle
+
+USEEFFECT: 
+import {useEffect} from 'react'
+
+useEffect(funcion, [array opcional])
+
+useEffect(()=>{console.log("hola")})
+
+
+
+-------------------------------------
+CLASE 06 - Promises, asincronía y MAP
+
+- Incorporar imagenes:
+    Colocar las imagenes en la carpeta public y despues solo hay que poner xej "<img src="/logo192.png"/>"
+
+SWITCH: 
+    import {useState} from 'react'
+
+    const Contador = () => {
+        
+        const [dark, setDark] = useState(false) ---->"const [valor, funcion] = useState(elEstadoActual)"
+
+        const toggleDarkMode = () => {
+            setDark(!dark) ----> "const elBoton = () => {laFuncion(!elValorCambia)}
+        } 
+        return(
+            <div>
+                <h1>Contador</h1>
+                <p>El tema del sitio es: {dark.toString()}</p>
+                <button onClick={toogleDarkMode}>Cambiar de tema</button>
+            </div>
+        )
+
+    }
+
+-----------------------------------
+CLASE 07
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
